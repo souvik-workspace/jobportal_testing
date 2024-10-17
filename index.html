@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <style>
+        /* Custom styles */
+        .hero-section {
+            background: linear-gradient(90deg, #4a90e2, #0062cc);
+            padding: 50px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .company-logos img {
+            max-width: 250px;
+            max-height: 80px;
+            margin: 10px;
+        }
+        .testimonials {
+            background: #f9f9f9;
+            padding: 50px 0;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            padding: 30px 0;
+        }
+
+        .job-role-div {
+            text-align: center;
+            border: 1px solid #E8E8E8;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #010c2c; /* Ensure a consistent background */
+            cursor: pointer; 
+            margin-top: 22px;
+            
+        }
+
+        .job-role-div:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+        }
+
+        .job-role-title {            
+            font-weight: 700;
+            text-align: center;
+            padding-top: 16px;
+            font-size: 13px;
+            color: #ffffff;
+            height: 40px;
+        }
+
+        .job-role-count{
+            text-align: center;
+            padding-top: 25px;
+            font-size: 12px;
+            color: #ffffff;
+        }
+
+        .img-60 {
+            width: 60px;
+            height: 60px;
+            object-fit: contain; /* Make sure the images are correctly sized */
+        }
+
+        @media (max-width: 767.98px) { /* Mobile responsiveness */
+            .job-role-div {
+                margin: 5px;
+                padding: 10px;
+            }
+            .job-role-title {
+                font-size: 14px;
+            }
+        }
+
+
+        .tabs {
+            cursor: pointer;
+            margin: 0 15px;
+            padding: 9px;
+            display: inline-block;
+        }
+
+        .active-tab {
+            border-bottom: 2px solid #007bff;
+        }
+
+        .boxContent {
+            height: 400px; /* Fixed height for both sections */
+        }
+
+        .boxContent a{
+            padding: 24px;
+        }
+
+        .list-group {
+            max-height: 100%;
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .tableView {
+            max-height: 100%;
+            overflow-y: auto; /* Fixed table without scrolling */
+        }
+        
+
+        .tableView table tr th{
+            background: #0c69cf;
+            color: white;
+        }
+
+        .tableView table tr td{
+            padding: 24px;
+        }
+
+
+        .testimonials{
+            background-color: #d5e9ff;
+        }
+
+        .jobSection .jobType{
+            margin: 0;    
+            padding: 0;
+            width: 90%;
+        }
+
+        .jobSection .jobType a{
+            text-decoration: none;
+            color:#333;
+        }
+        .jobSection .jobType a span{            
+            padding: 0 5px;
+        }
+        
+        
+    
+
+
+       
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="./img/logo.jpg" style="max-width: 300px;max-height: 80px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Business Enquiries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Post Free Job</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-warning" href="#">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1>Find the Best Job Near You</h1>
+        <p>66,375+ active job vacancies to grab</p>
+        <form class="d-flex justify-content-center">
+            <div class="input-group mb-3 w-50">
+                <select class="form-select">
+                    <option selected>Select Job Role</option>
+                    <option value="1">Accountant</option>
+                    <option value="2">Engineer</option>
+                    <option value="3">Manager</option>
+                </select>
+                <select class="form-select">
+                    <option selected>Select City</option>
+                    <option value="1">Chennai</option>
+                    <option value="2">Bangalore</option>
+                    <option value="3">Mumbai</option>
+                </select>
+                <button class="btn btn-warning" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header bg-white">
+                    <span class="font-bold tabs roleTab active-tab" onclick="showTab('jobRoles')">Top Job Roles</span>
+                    <span class="font-bold tabs videoTab" onclick="showTab('videos')">Job Details Videos</span>
+                </div>
+
+                <div class="card-body">
+                    <div id="jobRoles" class="tab-content">
+                        <div class="row d-flex justify-content-between">
+                            <!-- Job Role Box 1 -->
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Accountant" class="img-60" src="./img/workfromhome.png">
+                                <div class="job-role-title mt-2">Work from Home</div>
+                                <div class="job-role-count">258 Active Jobs</div>
+                            </a>
+    
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Accountant" class="center img-60" src="./img/Accountant.png">
+                                <div class="center job-role-title">Accountant</div>
+                                <div class="center job-role-count">825 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="BPO / Customer care" class="center img-60" src="./img/BPO_Telecallers.png">
+                                <div class="center job-role-title">BPO / Customer care</div>
+                                <div class="center job-role-count">1581 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Data Entry / Back Office" class="center img-60" src="./img/Data_entry_Back_office.png">
+                                <div class="center job-role-title">Data Entry / Back Office</div>
+                                <div class="center job-role-count">260 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Sales / Marketing" class="center img-60" src="./img/Sales.png">
+                                <div class="center job-role-title">Sales / Marketing</div>
+                                <div class="center job-role-count">2643 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Receptionist / Front Office" class="center img-60" src="./img/Receptionist_Front_office.png">
+                                <div class="center job-role-title">Receptionist / Front Office</div>
+                                <div class="center job-role-count">223 Active Jobs</div>
+                            </a>
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Hospitality Executives" class="center img-60" src="./img/Hospitality_Executives.png">
+                                <div class="center job-role-title">Hospitality Executives</div>
+                                <div class="center job-role-count">191 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Delivery" class="center img-60" src="./img/Delivery_boy.png">
+                                <div class="center job-role-title">Delivery</div>
+                                <div class="center job-role-count">75 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Cook / Chef" class="center img-60" src="./img/Cook.png">
+                                <div class="center job-role-title">Cook / Chef</div>
+                                <div class="center job-role-count">49 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Driver" class="center img-60" src="./img/Driver.png">
+                                <div class="center job-role-title">Driver</div>
+                                <div class="center job-role-count">2 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Painter" class="center img-60" src="./img/Painter.png">
+                                <div class="center job-role-title">Painter</div>
+                                <div class="center job-role-count">17 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Plumber" class="center img-60" src="./img/Plumber.png">
+                                <div class="center job-role-title">Plumber</div>
+                                <div class="center job-role-count">274 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="IT Software-Engineer" class="center img-60" src="./img/IT-Software.png">
+                                <div class="center job-role-title">IT Software-Engineer</div>
+                                <div class="center job-role-count">11366 Active Jobs</div>
+                            </a>
+                            
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img  alt="Electrician" class="center img-60" src="./img/Electrician.png">
+                                <div class="center job-role-title">Electrician</div>
+                                <div class="center job-role-count">156 Active Jobs</div>
+                            </a>
+
+                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">                                
+                                <img alt="view_all" class="center img-60 mt-4" src="./img/view_all.png">
+                                <div class="center job-role-title">View All</div>
+                            </a>
+                        </div>    
+                    </div>
+
+                    <div id="videos" class="tab-content d-none">
+                        <div class="row d-flex justify-content-between">
+                            <!-- Video Box 1 -->
+                            <a href="/accountant-jobs" class="col-md d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Accountant" class="img-60" src="./img/Accountant.svg">
+                                <div class="job-role-title mt-2">Accountant video</div>
+                                <div class="job-role-count">825 Active Jobs</div>
+                            </a>
+
+                            <a href="/accountant-jobs" class="col-md d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Accountant" class="img-60" src="./img/Accountant.svg">
+                                <div class="job-role-title mt-2">Accountant video</div>
+                                <div class="job-role-count">825 Active Jobs</div>
+                            </a>
+
+                            <a href="/accountant-jobs" class="col-md d-flex flex-column align-items-center text-decoration-none job-role-div">
+                                <img alt="Accountant" class="img-60" src="./img/Accountant.svg">
+                                <div class="job-role-title mt-2">Accountant video</div>
+                                <div class="job-role-count">825 Active Jobs</div>
+                            </a>
+    
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            
+        </div>
+        <div class="col-md-3">
+            <div class="d-flex flex-column align-items-center">            
+                <div class="row">
+                    <div class="image1 d-flex justify-content-center mb-3 border">
+                        <img src="./img/job_poster_1.jpeg" alt="Image 1" class="img-fluid">
+                    </div>
+                    <div class="image2 d-flex justify-content-center border">
+                        <img src="./img/job_poster_2.jpeg" alt="Image 2" class="img-fluid">
+                    </div>
+                </div>
+            </div>   
+        </div>        
+    </div>   
+
+</div>
+
+
+
+<!-- Partner Companies Section -->
+<section class="company-logos text-center py-4">
+    <div class="container">
+        <h3>Top Companies</h3>
+        <div class="slider d-flex justify-content-center">
+            <img src="./img/com_1.png" alt="Company 1">
+            <img src="./img/com_2.png" alt="Company 2">
+            <img src="./img/com_3.png" alt="Company 3">
+            <img src="./img/com_4.png" alt="Company 4">
+            <img src="./img/com_5.png" alt="Company 5">
+            <img src="./img/com_6.png" alt="Company 6">
+            <img src="./img/com_7.png" alt="Company 7">            
+        </div>
+    </div>
+</section>
+
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <!-- Recent Jobs Section -->
+        <div class="col-md-6 d-flex flex-column">
+            <div class="boxTitle mb-3">
+                <h3>Recent Jobs</h3>
+            </div>
+            <div class="boxContent list-group flex-grow-1">
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld,
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Kolkata
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Chennai
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Mumbai
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Hyderabad
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Delhi
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Assam
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Assam
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Assam
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Assam
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Assam
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Assam
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Associate Software Engineer, A Client of Freshersworld, Assam
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Number of Jobs in Top Cities Section -->
+        <div class="col-md-6 d-flex flex-column">
+            <div class="boxTitle mb-3">
+                <h3>Number of Jobs in Top Cities</h3>
+            </div>
+            <div class="boxContent tableView">
+                <table class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">City</th>
+                            <th scope="col">Number of Jobs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kolkata</td>
+                            <td>1245</td>
+                        </tr>
+                        <tr>
+                            <td>Mumbai</td>
+                            <td>1025</td>
+                        </tr>
+                        <tr>
+                            <td>Chennai</td>
+                            <td>7856</td>
+                        </tr>
+                        <tr>
+                            <td>Hyderabad</td>
+                            <td>568</td>
+                        </tr>
+                        <tr>
+                            <td>Delhi</td>
+                            <td>458</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<section class="testimonials text-center py-4">
+    <div class="container">
+        <h3>Testimonials</h3>
+        <div class="testimonialsSlider mt-5 mb-5 d-flex justify-content-center">
+
+            <div class="testimonial-box">
+                <p>"Very professional service. I highly recommend this to anyone seeking a new career path."</p>
+                <h5>- Michael Johnson</h5>
+            </div>
+            
+            <div class="testimonial-box">
+                <p>"I appreciate how user-friendly the platform is. It made my job search so much easier."</p>
+                <h5>- Sarah Brown</h5>
+            </div>
+
+            <div class="testimonial-box">
+                <p>"The customer service team is very helpful and prompt in responding."</p>
+                <h5>- David Lee</h5>
+            </div>
+
+            <div class="testimonial-box">
+                <p>"Exceptional experience. I am very satisfied with the opportunities I got through this portal."</p>
+                <h5>- Emily Davis</h5>
+            </div>
+                     
+        </div>
+    </div>
+</section>
+
+
+<section class="jobSection mt-5 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Jobs By Roles</h4>
+                <ul class="jobType">
+                    <a href="#">Accountant <span>|</span></a>
+                    <a href="#">Architect <span>|</span></a>
+                    <a href="#">BPO / Telecaller <span>|</span></a>
+                    <a href="#">Tech Support <span>|</span></a>
+                    <a href="#">Content Writer <span>|</span></a>
+                    <a href="#">Fashion Designer <span>|</span></a>
+                    <a href="#">Data Entry <span>|</span></a>
+                    <a href="#">SEO / Social Media <span>|</span></a>
+                    <a href="#">HR / Admin <span>|</span></a>
+                    <a href="#">Engineer(Core,Non-IT) <span>|</span></a>
+                    <a href="#">Sales Executive <span>|</span></a>
+                    <a href="#">Management Trainee <span>|</span></a>
+                    <a href="#">Design / Animation <span>|</span></a>
+                    <a href="#">Teacher / Trainer <span>|</span></a>
+                    <a href="#">Delivery Executive <span>|</span></a>
+                    <a href="#">Chef / Cook <span>|</span></a>
+                    <a href="#">Counsellor <span>|</span></a>
+                    <a href="#">More Roles </a>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h4>Jobs By Cities</h4>
+                <ul class="jobType">
+                    <a href="#">Ahmedabad <span>|</span> </a>
+                    <a href="#">Bangalore <span>|</span> </a>
+                    <a href="#">Chennai <span>|</span> </a>
+                    <a href="#">Delhi <span>|</span> </a>
+                    <a href="#">Hyderabad <span>|</span> </a>
+                    <a href="#">Kolkata <span>|</span> </a>
+                    <a href="#">Mumbai <span>|</span> </a>
+                    <a href="#">Pune <span>|</span> </a>
+                    <a href="#">Noida <span>|</span> </a>
+                    <a href="#">Gurgaon <span>|</span> </a>
+                    <a href="#">Chandigarh <span>|</span> </a>
+                    <a href="#">Panaji <span>|</span> </a>
+                    <a href="#">Patna <span>|</span> </a>
+                    <a href="#">Bhopal <span>|</span> </a>
+                    <a href="#">Ahmednagar <span>|</span> </a>
+                    <a href="#">Bhubaneshwar <span>|</span> </a>
+                    <a href="#">Pondicherry <span>|</span> </a>
+                    <a href="#">Mohali <span>|</span> </a>
+                    <a href="#">Jaipur <span>|</span> </a>
+                    <a href="#">More Cities </a>
+                </ul>                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <p>© 2024 JobPortal. All rights reserved.</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="#" class="text-white">Terms & Conditions</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function showTab(tab) {
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.add('d-none'));
+
+        // Remove active tab class from all tabs
+        document.querySelectorAll('.tabs').forEach(el => el.classList.remove('active-tab'));
+
+        // Show the selected tab content and add active class to the clicked tab
+        document.getElementById(tab).classList.remove('d-none');
+        if (tab === 'jobRoles') {
+            document.querySelector('.roleTab').classList.add('active-tab');
+        } else {
+            document.querySelector('.videoTab').classList.add('active-tab');
+        }
+    }
+
+    $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 4, // Number of slides to show at once
+            slidesToScroll: 1, // Number of slides to scroll at a time
+            autoplay: true, // Automatically play the slides
+            autoplaySpeed: 2000, // Speed of autoplay
+            dots: true, // Show dots below the slider
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2 // Show 2 slides on smaller screens
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1 // Show 1 slide on extra small screens
+                    }
+                }
+            ]
+        });
+
+        $('.testimonialsSlider').slick({
+            slidesToShow: 1, // Number of slides to show at once
+            slidesToScroll: 1, // Number of slides to scroll at a time
+            autoplay: true, // Automatically play the slides
+            autoplaySpeed: 2500, // Speed of autoplay
+            dots: true, // Show dots below the slider
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2 // Show 2 slides on smaller screens
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1 // Show 1 slide on extra small screens
+                    }
+                }
+            ]
+        });
+
+
+    });
+
+    
+
+
+
+</script>
+</body>
+</html>
