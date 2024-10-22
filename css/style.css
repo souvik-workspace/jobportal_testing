@@ -1,0 +1,133 @@
+.hero-section {
+    background: linear-gradient(90deg, #4a90e2, #0062cc);
+    padding: 50px 0;
+    color: white;
+    text-align: center;
+}
+
+.company-logos img {
+    max-width: 250px;
+    max-height: 80px;
+    margin: 10px;
+}
+.testimonials {
+    background: #f9f9f9;
+    padding: 50px 0;
+}
+.footer {
+    background: #333;
+    color: white;
+    padding: 30px 0;
+}
+
+.job-role-div {
+    text-align: center;
+    border: 1px solid #E8E8E8;
+    /* border-radius: 6px; */
+    padding: 15px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #010c2c; /* Ensure a consistent background */
+    cursor: pointer; 
+    margin-top: 22px;
+    border-radius:50%;
+    height: 180px;
+    width: 180px;
+
+    
+}
+
+.job-role-div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.job-role-title {            
+    font-weight: 700;
+    text-align: center;
+    padding-top: 16px;
+    font-size: 13px;
+    color: #ffffff;
+    height: 40px;
+}
+
+.job-role-count{
+    text-align: center;
+    padding-top: 15px;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.img-60 {
+    width: 60px;
+    height: 60px;
+    object-fit: contain; /* Make sure the images are correctly sized */
+}
+
+@media (max-width: 767.98px) { /* Mobile responsiveness */
+    .job-role-div {
+        margin: 5px;
+        padding: 10px;
+    }
+    .job-role-title {
+        font-size: 14px;
+    }
+}
+
+
+.tabs {
+    cursor: pointer;
+    margin: 0 15px;
+    padding: 9px;
+    display: inline-block;
+}
+
+.active-tab {
+    border-bottom: 2px solid #007bff;
+}
+
+.boxContent {
+    height: 400px; /* Fixed height for both sections */
+}
+
+.boxContent a{
+    padding: 24px;
+}
+
+.list-group {
+    max-height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+.tableView {
+    max-height: 100%;
+    overflow-y: auto; /* Fixed table without scrolling */
+}
+
+
+.tableView table tr th{
+    background: #0c69cf;
+    color: white;
+}
+
+.tableView table tr td{
+    padding: 24px;
+}
+
+
+.testimonials{
+    background-color: #d5e9ff;
+}
+
+.jobSection .jobType{
+    margin: 0;    
+    padding: 0;
+    width: 90%;
+}
+
+.jobSection .jobType a{
+    text-decoration: none;
+    color:#333;
+}
+.jobSection .jobType a span{            
+    padding: 0 5px;
+}

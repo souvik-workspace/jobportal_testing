@@ -8,150 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-    
-
-    <style>
-        /* Custom styles */
-        .hero-section {
-            background: linear-gradient(90deg, #4a90e2, #0062cc);
-            padding: 50px 0;
-            color: white;
-            text-align: center;
-        }
-        
-        .company-logos img {
-            max-width: 250px;
-            max-height: 80px;
-            margin: 10px;
-        }
-        .testimonials {
-            background: #f9f9f9;
-            padding: 50px 0;
-        }
-        .footer {
-            background: #333;
-            color: white;
-            padding: 30px 0;
-        }
-
-        .job-role-div {
-            text-align: center;
-            border: 1px solid #E8E8E8;
-            /* border-radius: 6px; */
-            padding: 15px;
-            margin: 10px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            background-color: #010c2c; /* Ensure a consistent background */
-            cursor: pointer; 
-            margin-top: 22px;
-            border-radius:50%;
-            height: 180px;
-            width: 180px;
-
-            
-        }
-
-        .job-role-div:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
-        }
-
-        .job-role-title {            
-            font-weight: 700;
-            text-align: center;
-            padding-top: 16px;
-            font-size: 13px;
-            color: #ffffff;
-            height: 40px;
-        }
-
-        .job-role-count{
-            text-align: center;
-            padding-top: 15px;
-            font-size: 12px;
-            color: #ffffff;
-        }
-
-        .img-60 {
-            width: 60px;
-            height: 60px;
-            object-fit: contain; /* Make sure the images are correctly sized */
-        }
-
-        @media (max-width: 767.98px) { /* Mobile responsiveness */
-            .job-role-div {
-                margin: 5px;
-                padding: 10px;
-            }
-            .job-role-title {
-                font-size: 14px;
-            }
-        }
-
-
-        .tabs {
-            cursor: pointer;
-            margin: 0 15px;
-            padding: 9px;
-            display: inline-block;
-        }
-
-        .active-tab {
-            border-bottom: 2px solid #007bff;
-        }
-
-        .boxContent {
-            height: 400px; /* Fixed height for both sections */
-        }
-
-        .boxContent a{
-            padding: 24px;
-        }
-
-        .list-group {
-            max-height: 100%;
-            overflow-y: auto; /* Enable vertical scrolling */
-        }
-        .tableView {
-            max-height: 100%;
-            overflow-y: auto; /* Fixed table without scrolling */
-        }
-        
-
-        .tableView table tr th{
-            background: #0c69cf;
-            color: white;
-        }
-
-        .tableView table tr td{
-            padding: 24px;
-        }
-
-
-        .testimonials{
-            background-color: #d5e9ff;
-        }
-
-        .jobSection .jobType{
-            margin: 0;    
-            padding: 0;
-            width: 90%;
-        }
-
-        .jobSection .jobType a{
-            text-decoration: none;
-            color:#333;
-        }
-        .jobSection .jobType a span{            
-            padding: 0 5px;
-        }
-        
-        
-    
-
-
-       
-    </style>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -160,7 +17,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img src="./img/logo.jpg" style="max-width: 300px; max-height: 80px;" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" id="navbar-toggler">
@@ -233,96 +90,96 @@
                     <div id="jobRoles" class="tab-content">
                         <div class="row d-flex justify-content-between">
                             <!-- Job Role Box 1 -->
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Accountant" class="img-60" src="./img/workfromhome.png">
                                 <div class="job-role-title mt-2">Work from Home</div>
                                 <div class="job-role-count">258 Active Jobs</div>
                             </a>
     
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Accountant" class="center img-60" src="./img/Accountant.png">
                                 <div class="center job-role-title">Accountant</div>
                                 <div class="center job-role-count">825 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="BPO / Customer care" class="center img-60" src="./img/BPO_Telecallers.png">
                                 <div class="center job-role-title">BPO / Customer care</div>
                                 <div class="center job-role-count">1581 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Data Entry / Back Office" class="center img-60" src="./img/Data_entry_Back_office.png">
                                 <div class="center job-role-title">Data Entry / Back Office</div>
                                 <div class="center job-role-count">260 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Sales / Marketing" class="center img-60" src="./img/Sales.png">
                                 <div class="center job-role-title">Sales / Marketing</div>
                                 <div class="center job-role-count">2643 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Receptionist / Front Office" class="center img-60" src="./img/Receptionist_Front_office.png">
                                 <div class="center job-role-title">Receptionist / Front Office</div>
                                 <div class="center job-role-count">223 Active Jobs</div>
                             </a>
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Hospitality Executives" class="center img-60" src="./img/Hospitality_Executives.png">
                                 <div class="center job-role-title">Hospitality Executives</div>
                                 <div class="center job-role-count">191 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Delivery" class="center img-60" src="./img/Delivery_boy.png">
                                 <div class="center job-role-title">Delivery</div>
                                 <div class="center job-role-count">75 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Cook / Chef" class="center img-60" src="./img/Cook.png">
                                 <div class="center job-role-title">Cook / Chef</div>
                                 <div class="center job-role-count">49 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Driver" class="center img-60" src="./img/Driver.png">
                                 <div class="center job-role-title">Driver</div>
                                 <div class="center job-role-count">2 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Painter" class="center img-60" src="./img/Painter.png">
                                 <div class="center job-role-title">Painter</div>
                                 <div class="center job-role-count">17 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Plumber" class="center img-60" src="./img/Plumber.png">
                                 <div class="center job-role-title">Plumber</div>
                                 <div class="center job-role-count">274 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="IT Software-Engineer" class="center img-60" src="./img/IT-Software.png">
                                 <div class="center job-role-title">IT Software-Engineer</div>
                                 <div class="center job-role-count">11366 Active Jobs</div>
                             </a>
                             
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img  alt="Electrician" class="center img-60" src="./img/Electrician.png">
                                 <div class="center job-role-title">Electrician</div>
                                 <div class="center job-role-count">156 Active Jobs</div>
                             </a>
 
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img  alt="Carpenter" class="center img-60" src="./img/Carpenter.png">
                                 <div class="center job-role-title">Carpenter</div>
                                 <div class="center job-role-count">16 Active Jobs</div>
                             </a>
 
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">                                
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">                                
                                 <img alt="view_all" class="center img-60 mt-4" src="./img/view_all.png">
                                 <div class="center job-role-title">View All</div>
                             </a>
@@ -332,19 +189,19 @@
                     <div id="videos" class="tab-content d-none">
                         <div class="row d-flex justify-content-between">
                             <!-- Video Box 1 -->
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Accountant" class="img-60" src="./img/Accountant.svg">
                                 <div class="job-role-title mt-2">Accountant video</div>
                                 <div class="job-role-count">825 Active Jobs</div>
                             </a>
 
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Accountant" class="img-60" src="./img/Accountant.svg">
                                 <div class="job-role-title mt-2">Accountant video</div>
                                 <div class="job-role-count">825 Active Jobs</div>
                             </a>
 
-                            <a href="/accountant-jobs" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
+                            <a href="job-category.html" class="col-md-2 d-flex flex-column align-items-center text-decoration-none job-role-div">
                                 <img alt="Accountant" class="img-60" src="./img/Accountant.svg">
                                 <div class="job-role-title mt-2">Accountant video</div>
                                 <div class="job-role-count">825 Active Jobs</div>
@@ -582,7 +439,7 @@
 <!-- Footer -->
 <footer class="footer text-center">
     <div class="container">
-        <p>© 2024 JobPortal. All rights reserved.</p>
+        <p>© 2024 SevenGigs. All rights reserved.</p>
         <ul class="list-inline">
             <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
             <li class="list-inline-item"><a href="#" class="text-white">Terms & Conditions</a></li>
